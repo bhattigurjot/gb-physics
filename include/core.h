@@ -165,6 +165,26 @@ namespace gbp
 			return Vector3D(x * _vec.x,	y * _vec.y,	z * _vec.z);
 		}
 
+		/**
+		* Scaler/Dot Product of this vector and the given vector
+		* @param = Vector3D reference
+		* @return = real scalar value
+		*/
+		real ScalerProduct(const Vector3D& _vec) const
+		{
+			return (x * _vec.x + y * _vec.y + z * _vec.z);
+		}
+
+		/**
+		* Scaler/Dot Product of this vector and the given vector
+		* @param = Vector3D reference
+		* @return = real scalar value
+		*/
+		real operator * (const Vector3D& _vec) const
+		{
+			return (x * _vec.x + y * _vec.y + z * _vec.z);
+		}
+
 	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector
