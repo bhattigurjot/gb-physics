@@ -144,6 +144,27 @@ namespace gbp
 			(*this) *= magnitude;
 		}
 
+		/**
+		* Component wise product of this vector and the given vector
+		* @param = Vector3D reference
+		*/
+		void ComponentProductUpdate(const Vector3D& _vec)
+		{
+			x *= _vec.x;
+			y *= _vec.y;
+			z *= _vec.z;
+		}
+
+		/**
+		* Calculate component wise product of this vector and the given vector and return it
+		* @param = Vector3D reference
+		* @return = new Vector3D object
+		*/
+		Vector3D ComponentProduct(const Vector3D& _vec) const
+		{
+			return Vector3D(x * _vec.x,	y * _vec.y,	z * _vec.z);
+		}
+
 	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector
