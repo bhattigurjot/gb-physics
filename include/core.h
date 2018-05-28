@@ -26,6 +26,26 @@ namespace gbp
 			y = -y;
 			z = -z;
 		}
+
+		/**
+		 * Calculate Magnitude of this vector and return
+		 * @return = real magnitude value
+		 */
+		real Magnitude()
+		{
+			return real_sqrt(x * x + y * y + z * z);
+		}
+
+		/**
+		* Calculate Magnitude Square of this vector and return
+		* Used for most of the 
+		* @return = real magnitude square value
+		*/
+		real MagnitudeSquare()
+		{
+			return (x * x + y * y + z * z);
+		}
+
 	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector

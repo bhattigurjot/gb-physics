@@ -3,7 +3,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(gb-physics)
 
-include_directories(gb-physics)
+include_directories(include)
 
 file(GLOB SOURCES "tests/*.cpp")
 
