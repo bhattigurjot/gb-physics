@@ -31,7 +31,7 @@ namespace gbp
 		 * Calculate Magnitude of this vector and return
 		 * @return = real magnitude value
 		 */
-		real Magnitude()
+		real Magnitude() const
 		{
 			return real_sqrt(x * x + y * y + z * z);
 		}
@@ -41,7 +41,7 @@ namespace gbp
 		* Used for most of the 
 		* @return = real magnitude square value
 		*/
-		real MagnitudeSquare()
+		real MagnitudeSquare() const
 		{
 			return (x * x + y * y + z * z);
 		}
