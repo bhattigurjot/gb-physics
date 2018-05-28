@@ -3,9 +3,11 @@
 
 namespace gbp
 {
-	// For precision control
-	// single precision - float
-	// double precision - double
+	/**
+	 * For precision control
+	 * single precision - float
+	 * double precision - double
+	 */
 	typedef float real;
 }
 
