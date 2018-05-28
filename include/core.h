@@ -10,13 +10,15 @@ namespace gbp
 	{
 	public:
 		// Default constructor
-		Vector3D(): x(0.0), y(0.0), z(0.0) {}
+		Vector3D() : x(0.0), y(0.0), z(0.0) {}
 		// Explicit constructor
-		Vector3D(real _x, real _y, real _z) : x(_x), y(_y), z(_z) {}
-	private:
+		Vector3D(const real _x, const real _y, const real _z) : x(_x), y(_y), z(_z) {}
+	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector
 		real z; // z component of 3d vector
+	private:
+		real padding; // padding for four word alignment (in memory)
 	};
 
 }
