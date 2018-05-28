@@ -18,8 +18,8 @@ namespace gbp
 		Vector3D(const real _x, const real _y, const real _z) : x(_x), y(_y), z(_z) {}
 
 		/**
-		 * Invert this vector
-		 */
+		* Invert this vector
+		*/
 		void Invert()
 		{
 			x = -z;
@@ -38,12 +38,44 @@ namespace gbp
 
 		/**
 		* Calculate Magnitude Square of this vector and return
-		* Used for most of the 
+		* Used for most of the calculations 
 		* @return = real magnitude square value
 		*/
 		real MagnitudeSquare() const
 		{
 			return (x * x + y * y + z * z);
+		}
+
+		/**
+		* Normalize this vector if it is non-zero vector
+		*/
+		Vector3D Normalize()
+		{
+			real m = Magnitude();
+			if (m > 0) // ensure that it has magnitude
+			{
+				(*this) *= static_cast<real>(1.0) / m;
+			}
+		}
+
+		/**
+		* Multiply all components of this vector by scalar value
+		*/
+		void operator *= (real scalar)
+		{
+			x *= scalar;
+			y *= scalar;
+			z *= scalar;
+		}
+
+		/**
+		* Multiply all components of this vector by scalar value
+		* and return a new vector
+		* @return = new Vector3D object
+		*/
+		Vector3D operator * (real scalar) const
+		{
+			return Vector3D(x * scalar, y * scalar, z * scalar);
 		}
 
 	public:
