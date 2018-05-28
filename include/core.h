@@ -61,7 +61,7 @@ namespace gbp
 		/**
 		* Multiply all components of this vector by scalar value
 		*/
-		void operator *= (real scalar)
+		void operator *= (const real scalar)
 		{
 			x *= scalar;
 			y *= scalar;
@@ -73,9 +73,47 @@ namespace gbp
 		* and return a new vector
 		* @return = new Vector3D object
 		*/
-		Vector3D operator * (real scalar) const
+		Vector3D operator * (const real scalar) const
 		{
 			return Vector3D(x * scalar, y * scalar, z * scalar);
+		}
+
+		/**
+		* Add a vector to this vector, components wise
+		*/
+		void operator += (const Vector3D& _vec)
+		{
+			x += _vec.x;
+			y += _vec.y;
+			z += _vec.z;
+		}
+
+		/**
+		* Add a vector to this vector and return new vector
+		* @return = new Vector3D object
+		*/
+		Vector3D operator + (const Vector3D& _vec) const
+		{
+			return Vector3D(x + _vec.x, y + _vec.y, z + _vec.z);
+		}
+
+		/**
+		* Subtract a vector from this vector, components wise
+		*/
+		void operator -= (const Vector3D& _vec)
+		{
+			x -= _vec.x;
+			y -= _vec.y;
+			z -= _vec.z;
+		}
+
+		/**
+		* Subtract a vector from this vector and return new vector
+		* @return = new Vector3D object
+		*/
+		Vector3D operator - (const Vector3D& _vec) const
+		{
+			return Vector3D(x - _vec.x, y - _vec.y, z - _vec.z);
 		}
 
 	public:
