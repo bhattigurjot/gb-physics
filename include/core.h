@@ -60,6 +60,7 @@ namespace gbp
 
 		/**
 		* Multiply all components of this vector by scalar value
+		* @param = scalar value to scale this vector
 		*/
 		void operator *= (const real scalar)
 		{
@@ -71,6 +72,7 @@ namespace gbp
 		/**
 		* Multiply all components of this vector by scalar value
 		* and return a new vector
+		* @param = Vector3D reference
 		* @return = new Vector3D object
 		*/
 		Vector3D operator * (const real scalar) const
@@ -80,6 +82,7 @@ namespace gbp
 
 		/**
 		* Add a vector to this vector, components wise
+		* @param = Vector3D reference
 		*/
 		void operator += (const Vector3D& _vec)
 		{
@@ -90,6 +93,7 @@ namespace gbp
 
 		/**
 		* Add a vector to this vector and return new vector
+		* @param = Vector3D reference
 		* @return = new Vector3D object
 		*/
 		Vector3D operator + (const Vector3D& _vec) const
@@ -99,6 +103,7 @@ namespace gbp
 
 		/**
 		* Subtract a vector from this vector, components wise
+		* @param = Vector3D reference
 		*/
 		void operator -= (const Vector3D& _vec)
 		{
@@ -109,11 +114,34 @@ namespace gbp
 
 		/**
 		* Subtract a vector from this vector and return new vector
+		* @param = Vector3D reference
 		* @return = new Vector3D object
 		*/
 		Vector3D operator - (const Vector3D& _vec) const
 		{
 			return Vector3D(x - _vec.x, y - _vec.y, z - _vec.z);
+		}
+
+		/**
+		* Add a vector to this vector after scaling 
+		* @param = Vector3D reference
+		* @param = scale value for scaling the vector in the paramter
+		*/
+		void AddScaledVector(const Vector3D& _vec, real scale)
+		{
+			x += _vec.x * scale;
+			y += _vec.y * scale;
+			z += _vec.z * scale;
+		}
+
+		/**
+		* Set the magnitude of this vector
+		* @param = new magnitude value for this vector
+		*/
+		void SetMagnitude(const real magnitude)
+		{
+			Normalize();
+			(*this) *= magnitude;
 		}
 
 	public:
