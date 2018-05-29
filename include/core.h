@@ -185,6 +185,39 @@ namespace gbp
 			return (x * _vec.x + y * _vec.y + z * _vec.z);
 		}
 
+		/**
+		* Vector/Cross Product of this vector and the given vector and returns it
+		* @param = Vector3D reference
+		* @return = new Vector3D object
+		*/
+		Vector3D VectorProduct(const Vector3D& _vec) const
+		{
+			return Vector3D(y * _vec.z - z * _vec.y,
+							z * _vec.x - x * _vec.z,
+							x * _vec.y - y * _vec.x);
+		}
+
+		/**
+		* Vector/Cross Product of this vector and the given vector, update this vector
+		* @param = Vector3D reference
+		*/
+		void operator %= (const Vector3D& _vec)
+		{
+			(*this) = VectorProduct(_vec);
+		}
+
+		/**
+		* Vector/Cross Product of this vector and the given vector and returns it
+		* @param = Vector3D reference
+		* @return = new Vector3D object
+		*/
+		Vector3D operator % (const Vector3D& _vec) const
+		{
+			return Vector3D(y * _vec.z - z * _vec.y,
+							z * _vec.x - x * _vec.z,
+							x * _vec.y - y * _vec.x);
+		}
+
 	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector
