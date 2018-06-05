@@ -228,7 +228,7 @@ namespace gbp
 		{
 			_vecA->Normalize();
 			(*_vecC) = (*_vecA) % (*_vecB);
-			if (_vecC->MagnitudeSquare() == 0) 
+			if (_vecC->MagnitudeSquare() == 0.0) 
 			{
 				return;
 			}
