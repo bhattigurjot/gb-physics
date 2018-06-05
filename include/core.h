@@ -218,6 +218,24 @@ namespace gbp
 							x * _vec.y - y * _vec.x);
 		}
 
+		/**
+		* Make all three vectors at right angle to each other, making orthogonal basis
+		* @param = pointer to first Vector3D
+		* @param = pointer to second Vector3D
+		* @param = pointer to third Vector3D
+		*/
+		void orthogonalBasis(Vector3D* _vecA, Vector3D* _vecB, Vector3D* _vecC)
+		{
+			_vecA->Normalize();
+			(*_vecC) = (*_vecA) % (*_vecB);
+			if (_vecC->MagnitudeSquare() == 0) 
+			{
+				return;
+			}
+			_vecC->Normalize();
+			(*_vecB) = (*_vecC) % (*_vecA);
+		}
+
 	public:
 		real x; // x component of 3d vector
 		real y; // y component of 3d vector
