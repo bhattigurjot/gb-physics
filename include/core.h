@@ -220,6 +220,7 @@ namespace gbp
 
 		/**
 		* Make all three vectors at right angle to each other, making orthogonal basis
+		* This is for RIGHT HANDED COORDINATE SYSTEM
 		* @param = pointer to first Vector3D
 		* @param = pointer to second Vector3D
 		* @param = pointer to third Vector3D
