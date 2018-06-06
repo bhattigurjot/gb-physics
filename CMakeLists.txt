@@ -5,6 +5,6 @@ project(gb-physics)
 
 include_directories(include)
 
-file(GLOB SOURCES "tests/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "tests/*.cpp")
 
 add_executable(gb-physics-tests ${SOURCES})

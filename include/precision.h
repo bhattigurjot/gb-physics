@@ -15,7 +15,8 @@ namespace gbp
 	/**
 	 * Define alias for functions
 	 */
-	#define real_sqrt(real) sqrtf(real)
+	#define real_sqrt sqrtf
+	#define real_pow powf
 }
 
 #endif // PRECISION_H
