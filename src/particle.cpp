@@ -19,7 +19,7 @@ void Particle::Integrate(real _duration)
 	
 	// Calculate the accelaration
 	// Used because forces will be added to this acceleration
-	Vector3D resultAcc = accelaration;
+	Vector3D resultAcc = acceleration;
 
 	// Update the velocity
 	velocity.AddScaledVector(resultAcc, _duration);
