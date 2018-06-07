@@ -2,6 +2,7 @@
 #define PRECISION_H
 
 #include <math.h>
+#include <float.h>
 
 namespace gbp
 {
@@ -11,6 +12,11 @@ namespace gbp
 	 * double precision - double
 	 */
 	typedef float real;
+	
+	/**
+     * Defines REAL_MAx as maximum value for float
+	 */
+	#define REAL_MAX FLT_MAX;
 
 	/**
 	 * Define alias for functions
