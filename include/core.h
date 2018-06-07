@@ -62,11 +62,11 @@ namespace gbp
 		* Multiply all components of this vector by scalar value
 		* @param = scalar value to scale this vector
 		*/
-		void operator *= (const real scalar)
+		void operator *= (const real _scalar)
 		{
-			x *= scalar;
-			y *= scalar;
-			z *= scalar;
+			x *= _scalar;
+			y *= _scalar;
+			z *= _scalar;
 		}
 
 		/**
@@ -75,9 +75,9 @@ namespace gbp
 		* @param = Vector3D reference
 		* @return = new Vector3D object
 		*/
-		Vector3D operator * (const real scalar) const
+		Vector3D operator * (const real _scalar) const
 		{
-			return Vector3D(x * scalar, y * scalar, z * scalar);
+			return Vector3D(x * _scalar, y * _scalar, z * _scalar);
 		}
 
 		/**
@@ -127,21 +127,21 @@ namespace gbp
 		* @param = Vector3D reference
 		* @param = scale value for scaling the vector in the paramter
 		*/
-		void AddScaledVector(const Vector3D& _vec, real scale)
+		void AddScaledVector(const Vector3D& _vec, real _scale)
 		{
-			x += _vec.x * scale;
-			y += _vec.y * scale;
-			z += _vec.z * scale;
+			x += _vec.x * _scale;
+			y += _vec.y * _scale;
+			z += _vec.z * _scale;
 		}
 
 		/**
 		* Set the magnitude of this vector
 		* @param = new magnitude value for this vector
 		*/
-		void SetMagnitude(const real magnitude)
+		void SetMagnitude(const real _magnitude)
 		{
 			Normalize();
-			(*this) *= magnitude;
+			(*this) *= _magnitude;
 		}
 
 		/**
